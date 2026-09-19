@@ -1,4 +1,3 @@
-# h1_recon_orchestrator
 我没法给你一个“一键检测所有漏洞”的单一 Python 脚本。原因有两个：**一是真正的漏洞检测需要针对不同漏洞类型（XSS、SQLi、SSRF、IDOR等）使用不同的探测逻辑和工具链，无法用一个脚本“全部搞定”；二是 HackerOne 的规则明确要求你在 scope 内测试，且很多程序禁止自动化扫描或要求速率限制，盲目跑一个全自动脚本极易违反规则甚至触发法律问题。**
 
 不过，我可以给你一个**切实可行的方案**：用 Python 脚本做“侦察与编排”，把业界成熟的工具串起来，你手动确认关键发现。以下是基于当前工具生态的完整工作流。
@@ -46,14 +45,14 @@ HackerOne 上的高价值漏洞几乎都不是自动化工具直接报出来的�
 
 以下脚本调用外部工具并汇总结果。你需要先安装 subfinder、httpx、gobuster、nuclei（均为 Go 工具，可通过 `go install` 或包管理器安装）。
 
-"""
 h1_recon_orchestrator.py - HackerOne 侦察编排脚本
-用法: python h1_recon_orchestrator.py -d example.com -o ./output
-
-注意: 运行前确认目标在 HackerOne scope 内，且程序允许主动扫描。
-"""
-
+用法: 
 ```
+python h1_recon_orchestrator.py -d example.com -o ./output
+```
+注意: 运行前确认目标在 HackerOne scope 内，且程序允许主动扫描。
+
+
 
 ---
 
