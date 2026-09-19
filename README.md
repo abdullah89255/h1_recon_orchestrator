@@ -40,13 +40,7 @@
 HackerOne 上的高价值漏洞几乎都不是自动化工具直接报出来的。行业资深猎人明确表示：**“扫描器生成的是候选，不是发现。所有进入报告的内容都要手动重新验证。”**
 
 ---
-
-## Python 编排脚本骨架
-
-以下脚本调用外部工具并汇总结果。你需要先安装 subfinder、httpx、gobuster、nuclei（均为 Go 工具，可通过 `go install` 或包管理器安装）。
-
-h1_recon_orchestrator.py - HackerOne 侦察编排脚本
-用法: 
+ 
 ```
 python h1_recon_orchestrator.py -d example.com -o ./output
 ```
